@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActionActivity"
+    android:background="@drawable/room_class_d"
+    android:id="@+id/imgBackGround"
+    >
+
+    <ImageView
+        android:id="@+id/imgPeople"
+        android:layout_width="130dp"
+        android:layout_height="255dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/scientist2" />
+
+    <TextView
+        android:id="@+id/tvText"
+        style="@style/style_my"
+        android:layout_width="557dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnContinue2"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="113dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.966"
+        app:srcCompat="@drawable/class_d_avatar" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="137dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/name_my"
+        style="@style/style_my"
+
+        app:layout_constraintBottom_toTopOf="@+id/tvText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        app:layout_constraintTop_toTopOf="@+id/imgAvatar" />
+
+    <ImageView
+        android:id="@+id/imgBox"
+        android:layout_width="302dp"
+        android:layout_height="187dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312"
+        app:srcCompat="@drawable/box" />
+
+    <RadioGroup
+        android:id="@+id/rbGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinue2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbPhoto4"
+            style="@style/style_my"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="radioButtonClick"
+            android:text="@string/photo4"
+            android:visibility="invisible" />
+
+        <RadioButton
+            android:id="@+id/rbPhoto3"
+            style="@style/style_my"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="radioButtonClick"
+            android:text="@string/photo3"
+            android:visibility="invisible" />
+
+        <RadioButton
+            android:id="@+id/rbPhoto2"
+            style="@style/style_my"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="radioButtonClick"
+            android:text="@string/photo2" />
+
+        <RadioButton
+            android:id="@+id/rbPhoto1"
+            style="@style/style_my"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="radioButtonClick"
+            android:text="@string/photo1" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnContinue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Далее"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947"
+        android:onClick="tvTextClick"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
