@@ -84,7 +84,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
-            android:id="@+id/rbPhoto4"
+            android:id="@+id/rbAnswer4"
             style="@style/style_my"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             android:visibility="invisible" />
 
         <RadioButton
-            android:id="@+id/rbPhoto3"
+            android:id="@+id/rbAnswer3"
             style="@style/style_my"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
             android:visibility="invisible" />
 
         <RadioButton
-            android:id="@+id/rbPhoto2"
+            android:id="@+id/rbAnswer2"
             style="@style/style_my"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
             android:text="@string/photo2" />
 
         <RadioButton
-            android:id="@+id/rbPhoto1"
+            android:id="@+id/rbAnswer1"
             style="@style/style_my"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
