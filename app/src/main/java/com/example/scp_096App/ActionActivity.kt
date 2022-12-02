@@ -75,10 +75,13 @@ class ActionActivity : AppCompatActivity() {
             imgAvatar.isVisible = true
             imgAvatar.setImageResource(avatar)
         }
-
-
     }
 
+    fun ivButtonMainMenuClick(view : View){
+        var intent : Intent = Intent(this@ActionActivity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
     fun radioButtonClick(view: View) {
 
        var button : RadioButton = findViewById(view.id)
@@ -420,62 +423,24 @@ class ActionActivity : AppCompatActivity() {
             imgBackGround.setBackgroundResource(R.drawable.report_3)
             newScene("", "", null,
                 null, null)
+            btnContinue.text = "Конец"
         }
         else if(tvText.text == getString(R.string.final2)){
             imgBackGround.setBackgroundResource(R.drawable.report_2)
             newScene("", "", null,
                 null, null)
+            btnContinue.text = "Конец"
         }
         else if(tvText.text == getString(R.string.final1)){
             imgBackGround.setBackgroundResource(R.drawable.report_1)
             newScene("", "", null,
                 null, null)
+            btnContinue.text = "Конец"
         }
-        else if(imgBackGround.background == getDrawable(R.drawable.report_3)){
+        else if(btnContinue.text == "Конец"){
             var intent : Intent = Intent(this@ActionActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
-        else if(imgBackGround.background == getDrawable(R.drawable.report_2)){
-            var intent : Intent = Intent(this@ActionActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        else if(imgBackGround.background == getDrawable(R.drawable.report_1)){
-            var intent : Intent = Intent(this@ActionActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        /*else if(tvText.text == getString(R.string.text12)){
-            newScene(getString(R.string.text13), getString(R.string.name_my),
-            null, null, R.drawable.class_d_avatar)
-            imgBackGround.setBackgroundResource(R.drawable.scp096_run)
-            mainAccentMusic  = MediaPlayer.create(this, R.raw.monster_sound)
-            mainAccentMusic.start()
-        }
-        else if(tvText.text == getString(R.string.text13)){
-            newScene(getString(R.string.text14), "", null, null, null)
-            imgBackGround.setBackgroundResource(R.drawable.black_image)
-        }
-        else if(tvText.text == getString(R.string.text14)){
-            newScene(getString(R.string.text15), getString(R.string.name_doctor),null, R.drawable.scientist2,
-                R.drawable.scientist_avatar)
-            imgBackGround.background = getDrawable(R.drawable.room_4)
-            mainAccentMusic  = MediaPlayer.create(this, R.raw.pencil_writing)
-            mainAccentMusic.start()
-        }
-        else if(tvText.text == getString(R.string.text15)){
-            if(mainAccentMusic.isPlaying)
-                mainAccentMusic.stop()
-            newScene(getString(R.string.text16), "", null, null, null)
-            imgBackGround.background = getDrawable(R.drawable.black_image)
-            mainAccentMusic  = MediaPlayer.create(this, R.raw.sound_2)
-            mainAccentMusic.start()
-        }
-        else if(tvText.text == getString(R.string.text16)){
-            val intent : Intent = Intent(this@ActionActivity, MainActivity :: class.java)
-            startActivity(intent)
-            finish()
-        }*/
     }
 }

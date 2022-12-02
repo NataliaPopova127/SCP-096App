@@ -2,6 +2,15 @@
     <string name="app_name">SCP-096</string>
     <string name="educationButton">Нажмите кнопку "\Далее"\, чтобы перейти на следующий слайд</string>
     <string name="main_menu_text">Нажмите на экран, чтобы начать</string>
+    <string name="music_text">Мелодии: \n
+        Static - Five nights at Freddys\n
+        Jay Varton - Final Examination (OST из "Игра на выживание")\n
+    </string>
+
+    <string name="pictures_text">Все изображения взяты из открытого доступа: Google картинки и YouTube
+        (прохождение игры "\(dont) open your eyes)"\
+    </string>
+
 
     <string name="name_my">D-2725</string>
     <string name="name_doctor">Доктор Дэн</string>
