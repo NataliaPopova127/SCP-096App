@@ -19,7 +19,7 @@ class ActionActivity : AppCompatActivity() {
     var photo3Checked : Boolean = false
     var photo4Checked : Boolean = false
     var eye : String = ""
-    var radiobutton : Int = -1
+    var isMusic : Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_action)
@@ -82,6 +82,19 @@ class ActionActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    fun ivButtonMusicClick(view : View){
+        if(isMusic){
+            ivButtonMusic.setImageResource(R.drawable.btn_not_music)
+            mainSplashMusic.pause()
+            isMusic = false
+        }
+        else{
+            ivButtonMusic.setImageResource(R.drawable.btn_music)
+            mainSplashMusic.start()
+            isMusic = true
+        }
+    }
+
     fun radioButtonClick(view: View) {
 
        var button : RadioButton = findViewById(view.id)
