@@ -12,12 +12,12 @@
         style="@style/style_my"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:text="@string/music_text"
         app:layout_constraintEnd_toStartOf="@+id/ivButtonMainMenu"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAboutProgram" />
 
     <TextView
         android:id="@+id/tvPictures"
@@ -43,5 +43,20 @@
         app:layout_constraintVertical_bias="0.071"
         app:srcCompat="@drawable/button_menu"
         android:onClick="ivButtonMainMenuClick"/>
+
+
+
+    <TextView
+        android:id="@+id/tvAboutProgram"
+        style="@style/style_my"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_about_program"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
