@@ -26,18 +26,13 @@ class ActionActivity : AppCompatActivity() {
 
         tvText.setText(R.string.text1)
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
-
-        var result : Bundle? = intent.extras
-        if(result != null){
-            isMusic = result.getBoolean("isMusic")
-        }
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
 
         mainAccentMusic  = MediaPlayer.create(this, R.raw.step_sound)
         mainSplashMusic = MediaPlayer.create(this, R.raw.main_theme)
-        if(!mainSplashMusic.isPlaying && isMusic)
+        if(!mainSplashMusic.isPlaying)
             mainSplashMusic.start()
-        if(!isMusic)
-            ivButtonMusic.setImageResource(R.drawable.btn_not_music)
+
         mainSplashMusic.isLooping = true
 
     }
@@ -230,7 +225,7 @@ class ActionActivity : AppCompatActivity() {
         }
     }
 
-    fun tvTextClick(view: View){
+    fun btnContinueClick(view: View){
 
         if(tvText.text == getString(R.string.text1)){
             newScene(getString(R.string.text2), getString(R.string.name_security),
