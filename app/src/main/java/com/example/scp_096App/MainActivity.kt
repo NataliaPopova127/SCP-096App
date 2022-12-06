@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     fun btnAboutProgramClick(view: View) {
         val intent : Intent = Intent(this@MainActivity, AboutProgramActivity::class.java)
         startActivity(intent)
-
+        finish()
     }
 
 }
