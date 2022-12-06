@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Pract19.Launcher">
+    <style name="Theme.Scp096.Launcher">
         <item name="android:windowBackground">@drawable/launch_screen</item>
     </style>
 </resources>

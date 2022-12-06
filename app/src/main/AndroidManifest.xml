@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:theme="@style/Theme.Pract19.Launcher"
+        android:theme="@style/Theme.Scp096.Launcher"
         tools:targetApi="31">
         <activity
             android:name=".AboutProgramActivity"

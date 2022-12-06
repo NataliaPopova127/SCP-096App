@@ -99,7 +99,10 @@ class ActionActivity : AppCompatActivity() {
     }
 
     fun radioButtonClick(view: View) {
-
+        rbAnswer1.isChecked = false
+        rbAnswer2.isChecked = false
+        rbAnswer3.isChecked = false
+        rbAnswer4.isChecked = false
        var button : RadioButton = findViewById(view.id)
         if(button.text == getString(R.string.photo1)){
             imgBox.isVisible = true

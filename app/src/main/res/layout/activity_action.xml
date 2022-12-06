@@ -25,8 +25,8 @@
     <TextView
         android:id="@+id/tvText"
         style="@style/style_my"
-        android:layout_width="527dp"
-        android:layout_height="103dp"
+        android:layout_width="0dp"
+        android:layout_height="113dp"
         android:layout_marginEnd="32dp"
         android:text="@string/text1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinue"
+        app:layout_constraintBottom_toTopOf="@+id/tvText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent">

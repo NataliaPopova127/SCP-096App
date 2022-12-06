@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var mainSplashMusic : MediaPlayer
     var isMusic : Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_Pract19_Launcher)
+        setTheme(R.style.Theme_Scp096_Launcher)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
