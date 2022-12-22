@@ -3,23 +3,17 @@ package com.example.scp_096App
 import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
-
-import kotlinx.android.synthetic.main.activity_action.*
+import kotlinx.android.synthetic.main.activity_story1.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.nio.file.Files
-import java.nio.file.Paths
-import kotlin.io.path.Path
 
-class ActionActivity : AppCompatActivity() {
+class Story1Activity : AppCompatActivity() {
     lateinit var mainSplashMusic : MediaPlayer
     lateinit var mainAccentMusic : MediaPlayer
     var photo1Checked : Boolean = false
@@ -28,10 +22,11 @@ class ActionActivity : AppCompatActivity() {
     var photo4Checked : Boolean = false
     var eye : String = ""
     var isMusic : Boolean = true
+    var isStory2 : String = "false"
     lateinit var text : List<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_action)
+        setContentView(R.layout.activity_story1)
         try{
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
             getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
@@ -43,10 +38,14 @@ class ActionActivity : AppCompatActivity() {
 
             mainSplashMusic.isLooping = true
 
-            val reader = BufferedReader(InputStreamReader(this.assets.open("story_text.txt"), "windows-1251"))
+            val reader = BufferedReader(InputStreamReader(this.assets.open("story1_text.txt"), "windows-1251"))
             text = reader.readLines()
 
             tvText.text = text[0]
+            rbAnswer1.text = text[9]
+            rbAnswer2.text = text[10]
+            rbAnswer3.text = text[11]
+            rbAnswer4.text = text[12]
         }
         catch(e : Exception){
             Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
@@ -95,7 +94,7 @@ class ActionActivity : AppCompatActivity() {
         }
     }
     fun ivButtonMainMenuClick(view : View){
-        var intent : Intent = Intent(this@ActionActivity, MainActivity::class.java)
+        var intent : Intent = Intent(this@Story1Activity, MainActivity::class.java)
         startActivity(intent)
         finish()
     }
@@ -242,7 +241,7 @@ class ActionActivity : AppCompatActivity() {
         }
     }
 
-    fun btnContinueClick(view: View){
+    fun tvTextClick(view: View){
 
         if(tvText.text == text[0]){
             newScene(text[1], getString(R.string.name_security),
@@ -454,25 +453,28 @@ class ActionActivity : AppCompatActivity() {
         }
         else if(tvText.text == text[56]){
             imgBackGround.setBackgroundResource(R.drawable.report_3)
-            newScene("", "", null,
+            newScene("Конец", "", null,
                 null, null)
-            btnContinue.text = "Конец"
         }
         else if(tvText.text == text[37]){
             imgBackGround.setBackgroundResource(R.drawable.report_2)
-            newScene("", "", null,
+            newScene("Конец", "", null,
                 null, null)
-            btnContinue.text = "Конец"
         }
         else if(tvText.text == text[23]){
             imgBackGround.setBackgroundResource(R.drawable.report_1)
-            newScene("", "", null,
+            newScene("Конец", "", null,
                 null, null)
-            btnContinue.text = "Конец"
+            isStory2 = "true"
+
+            val sharedPref = getSharedPreferences(getString(R.string.pref_file_key),Context.MODE_PRIVATE) ?: return
+            with (sharedPref.edit()) {
+                putString("isStory2", "true")
+                apply()
+            }
         }
-        else if(btnContinue.text == "Конец"){
-            var intent : Intent = Intent(this@ActionActivity, MainActivity::class.java)
-            intent.putExtra("isMusic", isMusic)
+        else if(tvText.text == "Конец"){
+            var intent : Intent = Intent(this@Story1Activity, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

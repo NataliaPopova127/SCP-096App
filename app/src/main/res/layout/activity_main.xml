@@ -9,31 +9,44 @@
     android:accessibilityPaneTitle="@string/app_name">
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/btnStory1"
         android:layout_width="209dp"
         android:layout_height="61dp"
-        android:text="Начать"
+        android:layout_marginTop="36dp"
+        android:onClick="btnStory1Click"
+        android:text="День 1"
         android:textSize="25dp"
-        android:onClick="startMenuClick"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStory2"
+        android:layout_width="209dp"
+        android:layout_height="61dp"
+        android:onClick="btnStory2Click"
+        android:text="День 2"
+        android:textColor="@color/gray"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnStory1"
+        app:layout_constraintTop_toBottomOf="@+id/btnStory1" />
 
     <Button
         android:id="@+id/btnAboutProgram"
         android:layout_width="209dp"
         android:layout_height="61dp"
+        android:onClick="btnAboutProgramClick"
         android:text="О программе"
         android:textSize="25dp"
-        android:onClick="btnAboutProgramClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

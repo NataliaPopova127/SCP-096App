@@ -18,11 +18,15 @@
         android:theme="@style/Theme.Scp096.Launcher"
         tools:targetApi="31">
         <activity
-            android:name=".AboutProgramActivity"
+            android:name=".Story2Activity"
             android:exported="false"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".ActionActivity"
+            android:name=".AboutProgramActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Story1Activity"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
