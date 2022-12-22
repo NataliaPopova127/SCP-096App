@@ -1,11 +1,13 @@
 package com.example.scp_096App
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 
 class AboutProgramActivity : AppCompatActivity() {
@@ -34,6 +36,27 @@ class AboutProgramActivity : AppCompatActivity() {
         }
         catch(e : Exception){
             Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+        }
+    }
+    fun btnDeleteScoreClick(view : View){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Удаление")
+            .setMessage("Вы уверены, что хотите удалить текущий результат?")
+            .setPositiveButton("Да") {
+                    dialog, id -> save()
+            }
+            .setNegativeButton("Нет"){
+                    dialog, id -> dialog.cancel()
+            }
+        builder.create()
+        builder.show()
+
+    }
+    fun save(){
+        val sharedPref = getSharedPreferences(getString(R.string.pref_file_key), Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putString("isStory2", "false")
+            apply()
         }
     }
 }

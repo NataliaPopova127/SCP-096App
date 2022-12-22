@@ -59,4 +59,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.239" />
 
+    <Button
+        android:id="@+id/btnDeleteScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Удалить результат"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPictures"
+        app:layout_constraintVertical_bias="0.529"
+        android:onClick="btnDeleteScoreClick"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

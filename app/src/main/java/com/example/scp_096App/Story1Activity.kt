@@ -22,7 +22,6 @@ class Story1Activity : AppCompatActivity() {
     var photo4Checked : Boolean = false
     var eye : String = ""
     var isMusic : Boolean = true
-    var isStory2 : String = "false"
     lateinit var text : List<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -465,7 +464,7 @@ class Story1Activity : AppCompatActivity() {
             imgBackGround.setBackgroundResource(R.drawable.report_1)
             newScene("Конец", "", null,
                 null, null)
-            isStory2 = "true"
+
 
             val sharedPref = getSharedPreferences(getString(R.string.pref_file_key),Context.MODE_PRIVATE) ?: return
             with (sharedPref.edit()) {
