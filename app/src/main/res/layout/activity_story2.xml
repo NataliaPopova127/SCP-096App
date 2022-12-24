@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Story2Activity"
     android:background="@drawable/lab_1"
-    android:id="@+id/back">
+    android:id="@+id/back"
+    android:onClick="backCick">
 
 
     <ImageView
@@ -37,7 +38,7 @@
         android:layout_width="62dp"
         android:layout_height="60dp"
         android:onClick="ivMapClick"
-        android:src="@drawable/map"
+        android:src="@drawable/map_lab_11"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imgAvatar"
         app:layout_constraintEnd_toEndOf="@+id/ivFlashlight"
@@ -95,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivFlashlight"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/map"
+        app:srcCompat="@drawable/map_lab_11"
         android:visibility="invisible"/>
 
     <RadioGroup

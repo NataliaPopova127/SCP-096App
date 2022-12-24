@@ -41,7 +41,7 @@ class AboutProgramActivity : AppCompatActivity() {
     fun btnDeleteScoreClick(view : View){
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Удаление")
-            .setMessage("Вы уверены, что хотите удалить текущий результат?")
+            .setMessage("Вы уверены, что хотите сбросить текущий прогресс?")
             .setPositiveButton("Да") {
                     dialog, id -> save()
             }

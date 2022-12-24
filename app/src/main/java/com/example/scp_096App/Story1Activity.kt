@@ -37,7 +37,7 @@ class Story1Activity : AppCompatActivity() {
 
             mainSplashMusic.isLooping = true
 
-            val reader = BufferedReader(InputStreamReader(this.assets.open("story1_text.txt"), "windows-1251"))
+            val reader = BufferedReader(InputStreamReader(this.assets.open("story1_text.txt"), "UTF-8"))
             text = reader.readLines()
 
             tvText.text = text[0]
@@ -459,6 +459,11 @@ class Story1Activity : AppCompatActivity() {
             imgBackGround.setBackgroundResource(R.drawable.report_2)
             newScene("Конец", "", null,
                 null, null)
+            val sharedPref = getSharedPreferences(getString(R.string.pref_file_key),Context.MODE_PRIVATE) ?: return
+            with (sharedPref.edit()) {
+                putString("isStory2", "true")
+                apply()
+            }
         }
         else if(tvText.text == text[23]){
             imgBackGround.setBackgroundResource(R.drawable.report_1)
