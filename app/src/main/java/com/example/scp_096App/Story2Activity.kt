@@ -1,10 +1,12 @@
 package com.example.scp_096App
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_story2.*
@@ -19,6 +21,7 @@ class Story2Activity : AppCompatActivity() {
     var firstClickFlashlight : Boolean = true
     var firstClickAccessCard : Boolean = true
     var backImage : String = "lab_7"
+    var isMusic : Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_story2)
@@ -26,6 +29,7 @@ class Story2Activity : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
         getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
 
+        mainAccentMusic = MediaPlayer.create(this, R.raw.take_material)
         mainSplashMusic = MediaPlayer.create(this, R.raw.music_runaway)
         if(!mainSplashMusic.isPlaying)
             mainSplashMusic.start()
@@ -40,7 +44,6 @@ class Story2Activity : AppCompatActivity() {
         rbAnswer3.text = getString(R.string.straight)
         rbAnswer4.text = getString(R.string.back)
     }
-
     override fun onStop() {
         super.onStop()
         if(mainSplashMusic.isPlaying)
@@ -48,7 +51,6 @@ class Story2Activity : AppCompatActivity() {
         if(mainAccentMusic.isPlaying)
             mainAccentMusic.stop()
     }
-
     fun ivMapClick(view : View){
         if(firstClickMap){
             ivMaterial.isVisible = true
@@ -105,7 +107,6 @@ class Story2Activity : AppCompatActivity() {
                 newScene(R.drawable.lab_3, text[7], "lab_3", R.drawable.map_lab_3)
             }
             else{
-                mainAccentMusic = MediaPlayer.create(this, R.raw.take_material)
                 mainAccentMusic.start()
                 newScene(R.drawable.lab_3, text[10], "lab_3", R.drawable.map_lab_3)
                 ivFlashlight.isVisible = true
@@ -133,7 +134,6 @@ class Story2Activity : AppCompatActivity() {
                 newScene(R.drawable.lab_7, text[7], "lab_7", R.drawable.map_lab_7)
             }
             else{
-                mainAccentMusic = MediaPlayer.create(this, R.raw.take_material)
                 mainAccentMusic.start()
                 newScene(R.drawable.lab_7, text[14], "lab_7", R.drawable.map_lab_7)
                 ivMap.isVisible = true
@@ -151,7 +151,6 @@ class Story2Activity : AppCompatActivity() {
                 newScene(R.drawable.lab_7, text[7], "lab_7", R.drawable.map_lab_7)
             }
             else{
-                mainAccentMusic = MediaPlayer.create(this, R.raw.take_material)
                 mainAccentMusic.start()
                 newScene(R.drawable.lab_7, text[5], "lab_7", R.drawable.map_lab_7)
                 ivMap.isVisible = true
@@ -182,7 +181,6 @@ class Story2Activity : AppCompatActivity() {
                 newScene(R.drawable.lab_9, text[7], "lab_9", R.drawable.map_lab_9)
             }
             else{
-                mainAccentMusic = MediaPlayer.create(this, R.raw.take_material)
                 mainAccentMusic.start()
                 newScene(R.drawable.lab_9, text[12], "lab_9", R.drawable.map_lab_9)
                 ivAccessCard.isVisible = true
@@ -313,10 +311,34 @@ class Story2Activity : AppCompatActivity() {
             rbGroup.isVisible = false
         }
     }
-    fun backClick(view: View){
-        if(backImage == "end"){
-            var intent : Intent = Intent(this@Story2Activity, MainActivity::class.java)
-            startActivity(intent)
+    fun backClick(view: View) {
+        try{
+            if(backImage == "end"){
+                var intent : Intent = Intent(this@Story2Activity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+        catch(e : Exception){
+            Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
         }
     }
+    fun ivButtonMainMenuClick(view : View){
+        var intent : Intent = Intent(this@Story2Activity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+    fun ivButtonMusicClick(view : View){
+        if(isMusic){
+            ivButtonMusic.setImageResource(R.drawable.btn_not_music)
+            mainSplashMusic.pause()
+            isMusic = false
+        }
+        else{
+            ivButtonMusic.setImageResource(R.drawable.btn_music)
+            mainSplashMusic.start()
+            isMusic = true
+        }
+    }
+
 }

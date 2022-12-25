@@ -43,7 +43,7 @@ class AboutProgramActivity : AppCompatActivity() {
         builder.setTitle("Удаление")
             .setMessage("Вы уверены, что хотите сбросить текущий прогресс?")
             .setPositiveButton("Да") {
-                    dialog, id -> save()
+                    dialog, id -> delete()
             }
             .setNegativeButton("Нет"){
                     dialog, id -> dialog.cancel()
@@ -52,7 +52,7 @@ class AboutProgramActivity : AppCompatActivity() {
         builder.show()
 
     }
-    fun save(){
+    fun delete(){
         val sharedPref = getSharedPreferences(getString(R.string.pref_file_key), Context.MODE_PRIVATE) ?: return
         with (sharedPref.edit()) {
             putString("isStory2", "false")

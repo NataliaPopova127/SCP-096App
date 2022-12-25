@@ -16,7 +16,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:theme="@style/Theme.Scp096.Launcher"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true">
         <activity
             android:name=".Story2Activity"
             android:exported="false"

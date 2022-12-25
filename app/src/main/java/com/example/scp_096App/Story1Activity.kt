@@ -109,7 +109,6 @@ class Story1Activity : AppCompatActivity() {
             isMusic = true
         }
     }
-
     fun radioButtonClick(view: View) {
         rbAnswer1.isChecked = false
         rbAnswer2.isChecked = false
@@ -239,7 +238,6 @@ class Story1Activity : AppCompatActivity() {
             rbGroup.isVisible = false
         }
     }
-
     fun tvTextClick(view: View){
 
         if(tvText.text == text[0]){
@@ -469,8 +467,6 @@ class Story1Activity : AppCompatActivity() {
             imgBackGround.setBackgroundResource(R.drawable.report_1)
             newScene("Конец", "", null,
                 null, null)
-
-
             val sharedPref = getSharedPreferences(getString(R.string.pref_file_key),Context.MODE_PRIVATE) ?: return
             with (sharedPref.edit()) {
                 putString("isStory2", "true")
